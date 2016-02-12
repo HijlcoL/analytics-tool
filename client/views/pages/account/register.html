@@ -1,0 +1,14 @@
+<template name="register">
+    
+    <div class="row">
+		<div class="col s12">
+			<h5>Add new user</h5>
+		</div>
+	</div>
+
+	<div class="card-panel">
+
+		{{> quickForm collection="Meteor.users" id="userCreate"}}
+		
+	</div>
+</template>

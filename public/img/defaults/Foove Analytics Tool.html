@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<!-- saved from url=(0031)http://localhost:3000/dashboard -->
+<html data-ember-extension="1"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" type="text/css" class="__meteor-css__" href="./Foove Analytics Tool_files/merged-stylesheets.css">
+
+
+<style type="text/css"></style><script type="text/javascript">__meteor_runtime_config__ = JSON.parse(decodeURIComponent("%7B%22meteorRelease%22%3A%22METEOR%401.2.1%22%2C%22PUBLIC_SETTINGS%22%3A%7B%7D%2C%22ROOT_URL%22%3A%22http%3A%2F%2Flocalhost%3A3000%2F%22%2C%22ROOT_URL_PATH_PREFIX%22%3A%22%22%2C%22appId%22%3A%221k3790c11bgaqvjo1r6k%22%2C%22autoupdateVersion%22%3A%22ca5837ef5ca9b68e2522fbb1f52fed8cae4222f0%22%2C%22autoupdateVersionRefreshable%22%3A%22537841eebd95c922b08fc105039505f7c220327a%22%2C%22autoupdateVersionCordova%22%3A%22none%22%7D"));</script>
+
+  <script type="text/javascript" src="./Foove Analytics Tool_files/es5-shim.js"></script>
+  <script type="text/javascript" src="./Foove Analytics Tool_files/underscore.js"></script>
+  <script type="text/javascript" src="./Foove Analytics Tool_files/meteor.js"></script>
+  <script type="text/javascript" src="./Foove Analytics Tool_files/meteor-base.js"></script>
+  <script type="text/javascript" src="./Foove Analytics Tool_files/mobile-experience.js"></script>
+  <script type="text/javascript" src="./Foove Analytics Tool_files/base64.js"></script>
+  <script type="text/javascript" src="./Foove Analytics Tool_files/ejson.js"></script>
+  <script type="text/javascript" src="./Foove Analytics Tool_files/check.js"></script>
+  <script type="text/javascript" src="./Foove Analytics Tool_files/babel-compiler.js"></script>
+  <script type="text/javascript" src="./Foove Analytics Tool_files/ecmascript.js"></script>
+  <script type="text/javascript" src="./Foove Analytics Tool_files/babel-runtime.js"></script>
+  <script type="text/javascript" src="./Foove Analytics Tool_files/ecmascript-runtime.js"></script>
+  <script type="text/javascript" src="./Foove Analytics Tool_files/promise.js"></script>
+  <script type="text/javascript" src="./Foove Analytics Tool_files/random.js"></script>
+  <script type="text/javascript" src="./Foove Analytics Tool_files/id-map.js"></script>
+  <script type="text/javascript" src="./Foove Analytics Tool_files/ordered-dict.js"></script>
+  <script type="text/javascript" src="./Foove Analytics Tool_files/tracker.js"></script>
+  <script type="text/javascript" src="./Foove Analytics Tool_files/mongo-id.js"></script>
+  <script type="text/javascript" src="./Foove Analytics Tool_files/diff-sequence.js"></script>
+  <script type="text/javascript" src="./Foove Analytics Tool_files/geojson-utils.js"></script>
+  <script type="text/javascript" src="./Foove Analytics Tool_files/minimongo.js"></script>
+  <script type="text/javascript" src="./Foove Analytics Tool_files/retry.js"></script>
+  <script type="text/javascript" src="./Foove Analytics Tool_files/ddp-common.js"></script>
+  <script type="text/javascript" src="./Foove Analytics Tool_files/reload.js"></script>
+  <script type="text/javascript" src="./Foove Analytics Tool_files/ddp-client.js"></script>
+  <script type="text/javascript" src="./Foove Analytics Tool_files/ddp.js"></script>
+  <script type="text/javascript" src="./Foove Analytics Tool_files/insecure.js"></script>
+  <script type="text/javascript" src="./Foove Analytics Tool_files/ddp-server.js"></script>
+  <script type="text/javascript" src="./Foove Analytics Tool_files/mongo.js"></script>
+  <script type="text/javascript" src="./Foove Analytics Tool_files/blaze-html-templates.js"></script>
+  <script type="text/javascript" src="./Foove Analytics Tool_files/reactive-dict.js"></script>
+  <script type="text/javascript" src="./Foove Analytics Tool_files/session.js"></script>
+  <script type="text/javascript" src="./Foove Analytics Tool_files/jquery.js"></script>
+  <script type="text/javascript" src="./Foove Analytics Tool_files/standard-minifiers.js"></script>
+  <script type="text/javascript" src="./Foove Analytics Tool_files/deps.js"></script>
+  <script type="text/javascript" src="./Foove Analytics Tool_files/htmljs.js"></script>
+  <script type="text/javascript" src="./Foove Analytics Tool_files/observe-sequence.js"></script>
+  <script type="text/javascript" src="./Foove Analytics Tool_files/reactive-var.js"></script>
+  <script type="text/javascript" src="./Foove Analytics Tool_files/blaze.js"></script>
+  <script type="text/javascript" src="./Foove Analytics Tool_files/ui.js"></script>
+  <script type="text/javascript" src="./Foove Analytics Tool_files/spacebars.js"></script>
+  <script type="text/javascript" src="./Foove Analytics Tool_files/templating.js"></script>
+  <script type="text/javascript" src="./Foove Analytics Tool_files/iron_core.js"></script>
+  <script type="text/javascript" src="./Foove Analytics Tool_files/iron_dynamic-template.js"></script>
+  <script type="text/javascript" src="./Foove Analytics Tool_files/iron_layout.js"></script>
+  <script type="text/javascript" src="./Foove Analytics Tool_files/iron_url.js"></script>
+  <script type="text/javascript" src="./Foove Analytics Tool_files/iron_middleware-stack.js"></script>
+  <script type="text/javascript" src="./Foove Analytics Tool_files/iron_location.js"></script>
+  <script type="text/javascript" src="./Foove Analytics Tool_files/iron_controller.js"></script>
+  <script type="text/javascript" src="./Foove Analytics Tool_files/iron_router.js"></script>
+  <script type="text/javascript" src="./Foove Analytics Tool_files/materialize_materialize.js"></script>
+  <script type="text/javascript" src="./Foove Analytics Tool_files/kevohagan_sweetalert.js"></script>
+  <script type="text/javascript" src="./Foove Analytics Tool_files/aldeed_simple-schema.js"></script>
+  <script type="text/javascript" src="./Foove Analytics Tool_files/aldeed_collection2.js"></script>
+  <script type="text/javascript" src="./Foove Analytics Tool_files/rate-limit.js"></script>
+  <script type="text/javascript" src="./Foove Analytics Tool_files/ddp-rate-limiter.js"></script>
+  <script type="text/javascript" src="./Foove Analytics Tool_files/localstorage.js"></script>
+  <script type="text/javascript" src="./Foove Analytics Tool_files/callback-hook.js"></script>
+  <script type="text/javascript" src="./Foove Analytics Tool_files/accounts-base.js"></script>
+  <script type="text/javascript" src="./Foove Analytics Tool_files/lai_collection-extensions.js"></script>
+  <script type="text/javascript" src="./Foove Analytics Tool_files/dburles_mongo-collection-instances.js"></script>
+  <script type="text/javascript" src="./Foove Analytics Tool_files/meteortoys_toykit.js"></script>
+  <script type="text/javascript" src="./Foove Analytics Tool_files/msavin_mongol.js"></script>
+  <script type="text/javascript" src="./Foove Analytics Tool_files/livedata.js"></script>
+  <script type="text/javascript" src="./Foove Analytics Tool_files/momentjs_moment.js"></script>
+  <script type="text/javascript" src="./Foove Analytics Tool_files/aldeed_autoform.js"></script>
+  <script type="text/javascript" src="./Foove Analytics Tool_files/gildaspk_autoform-materialize.js"></script>
+  <script type="text/javascript" src="./Foove Analytics Tool_files/npm-bcrypt.js"></script>
+  <script type="text/javascript" src="./Foove Analytics Tool_files/sha.js"></script>
+  <script type="text/javascript" src="./Foove Analytics Tool_files/srp.js"></script>
+  <script type="text/javascript" src="./Foove Analytics Tool_files/accounts-password.js"></script>
+  <script type="text/javascript" src="./Foove Analytics Tool_files/url.js"></script>
+  <script type="text/javascript" src="./Foove Analytics Tool_files/http.js"></script>
+  <script type="text/javascript" src="./Foove Analytics Tool_files/percolate_synced-cron.js"></script>
+  <script type="text/javascript" src="./Foove Analytics Tool_files/webapp.js"></script>
+  <script type="text/javascript" src="./Foove Analytics Tool_files/hot-code-push.js"></script>
+  <script type="text/javascript" src="./Foove Analytics Tool_files/launch-screen.js"></script>
+  <script type="text/javascript" src="./Foove Analytics Tool_files/autoupdate.js"></script>
+  <script type="text/javascript" src="./Foove Analytics Tool_files/global-imports.js"></script>
+  <script type="text/javascript" src="./Foove Analytics Tool_files/template.login.js"></script>
+  <script type="text/javascript" src="./Foove Analytics Tool_files/template.register.js"></script>
+  <script type="text/javascript" src="./Foove Analytics Tool_files/template.dashboard.js"></script>
+  <script type="text/javascript" src="./Foove Analytics Tool_files/template.portfolioCreate.js"></script>
+  <script type="text/javascript" src="./Foove Analytics Tool_files/template.portfolioEdit.js"></script>
+  <script type="text/javascript" src="./Foove Analytics Tool_files/template.portfolioItem.js"></script>
+  <script type="text/javascript" src="./Foove Analytics Tool_files/template.portfolioList.js"></script>
+  <script type="text/javascript" src="./Foove Analytics Tool_files/template.header.js"></script>
+  <script type="text/javascript" src="./Foove Analytics Tool_files/template.sidebar.js"></script>
+  <script type="text/javascript" src="./Foove Analytics Tool_files/template.loginLayout.js"></script>
+  <script type="text/javascript" src="./Foove Analytics Tool_files/template.not-found.js"></script>
+  <script type="text/javascript" src="./Foove Analytics Tool_files/template.main.js"></script>
+  <script type="text/javascript" src="./Foove Analytics Tool_files/browsers.js"></script>
+  <script type="text/javascript" src="./Foove Analytics Tool_files/portfolio.js"></script>
+  <script type="text/javascript" src="./Foove Analytics Tool_files/methods.js"></script>
+  <script type="text/javascript" src="./Foove Analytics Tool_files/router.js"></script>
+  <script type="text/javascript" src="./Foove Analytics Tool_files/accounts.js"></script>
+  <script type="text/javascript" src="./Foove Analytics Tool_files/dashboard.js"></script>
+  <script type="text/javascript" src="./Foove Analytics Tool_files/portfolio(1).js"></script>
+  <script type="text/javascript" src="./Foove Analytics Tool_files/header.js"></script>
+  <script type="text/javascript" src="./Foove Analytics Tool_files/sidebar.js"></script>
+  <script type="text/javascript" src="./Foove Analytics Tool_files/autoform.js"></script>
+  <script type="text/javascript" src="./Foove Analytics Tool_files/main.js"></script>
+  <script type="text/javascript" src="./Foove Analytics Tool_files/service-configuration.js"></script>
+
+
+
+<meta charset="utf-8">
+    <title>Foove Analytics Tool</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <link href="./Foove Analytics Tool_files/icon" rel="stylesheet">
+    <link href="./Foove Analytics Tool_files/style.css" rel="stylesheet">
+    <link rel="shortcut icon" href="http://localhost:3000/img/favicon.png">
+
+    <script type="text/javascript" src="./Foove Analytics Tool_files/umb.js"></script>
+</head>
+<body cz-shortcut-listen="true">
+
+
+
+<div class="hiddendiv common"></div><div class="MeteorToys_orbs MeteorToysReset">
+  
+    
+    
+  </div>
+  
+    
+    
+    
+    <div id="Mongol" class="MeteorToys MeteorToys_hide_Mongol MeteorToysReset Mongol_expand" oncontextmenu="Mongol.close(); return false;">
+
+		
+
+			<div class="Mongol_row" id="Mongol_cmongol_618">
+		
+
+    <strong>Mongol</strong><br>
+    <div class="Mongol_contentView">
+    <!--  -->
+      <div class="Mongol_docMenu" style="text-indent: 8px">
+        In-App MongoDB Editor
+      </div>
+      <div class="Mongol_documentViewer">
+<pre class="MeteorToys-off">{ 
+  <span class="MeteorToys_key">"created_by"</span>: "<a href="http://maxsavin.com/">Max Savin</a>",
+  <span class="MeteorToys_key">"docs_at"</span>:    "<a href="https://meteor.toys/">Meteor Toys</a>",
+  <span class="MeteorToys_key">"license"</span>:    "<a href="https://github.com/MeteorToys/allthings/blob/master/LICENSE.md">MT License</a>",
+}
+</pre>
+      </div>
+    <!--  -->
+    </div>
+
+  
+	</div>
+			<div class="Mongol_row" id="Mongol_caccount_618">
+		
+
+			<!-- Display sign in status -->
+			
+				<div class="Mongol_account_state MeteorToys-background-green"></div>
+			
+
+			<!-- Row Name -->
+			<div class="Mongol_icon Mongol_icon_user"></div>
+			Account
+     
+        <div class="Mongol_contentView">
+
+			<!-- Document Viewer -->
+			
+				
+
+		<div class="Mongol_docMenu">
+			<div class="Mongol_docBar1">
+				&nbsp;
+			</div>
+		</div>
+
+	
+
+	<div class="Mongol_documentViewer" id="MongolDoc_account_618">	
+		<pre>{
+  <span class="MeteorToys_key">"</span><span class="MeteorToys_key ">_id</span><span class="MeteorToys_key">"</span>: <span class="MeteorToys_string MeteorToys_inline" contenteditable="true">"f8sKSvAwqrWXKBcPq"</span>,
+  <span class="MeteorToys_key">"</span><span class="MeteorToys_key MeteorToys_inline" contenteditable="true">emails</span><span class="MeteorToys_key">"</span>: [
+    {
+      <span class="MeteorToys_key">"</span><span class="MeteorToys_key MeteorToys_inline" contenteditable="true">address</span><span class="MeteorToys_key">"</span>: <span class="MeteorToys_string MeteorToys_inline" contenteditable="true">"masi@foove.nl"</span>,
+      <span class="MeteorToys_key">"</span><span class="MeteorToys_key MeteorToys_inline" contenteditable="true">verified</span><span class="MeteorToys_key">"</span>: <span class="MeteorToys_boolean MeteorToys_inline" contenteditable="true">false</span>
+    }
+  ]
+}</pre>
+	</div>
+			
+
+		</div>
+
+	
+	</div>
+			<div class="Mongol_row" id="Mongol_csubscriptions_618">
+		
+
+		
+        <div class="Mongol_toggle_selected_collection">
+			<!-- Name -->
+			<div class="Mongol_icon Mongol_icon_sub"></div>Subscriptions
+        </div>
+
+		<div class="Mongol_contentView">
+		<div class="Mongol_docMenu" style="text-indent: 8px">
+			Observing Changes
+		</div>
+		<!-- Document Viewer -->
+		<div class="Mongol_documentViewer" style="Padding: 0px 7px !important">
+			
+				<div class="Mongol_pubsub_row">
+					<div class="Mongol_pubsub_row_toggle">×</div>
+					<div class="Mongol_pubsub_row_name">meteor.loginServiceConfiguration</div>
+					Params: none 
+				</div>
+			
+				<div class="Mongol_pubsub_row">
+					<div class="Mongol_pubsub_row_toggle">×</div>
+					<div class="Mongol_pubsub_row_name">meteor_autoupdate_clientVersions</div>
+					Params: none 
+				</div>
+			
+				<div class="Mongol_pubsub_row">
+					<div class="Mongol_pubsub_row_toggle">×</div>
+					<div class="Mongol_pubsub_row_name">items</div>
+					Params: none 
+				</div>
+			
+				<div class="Mongol_pubsub_row">
+					<div class="Mongol_pubsub_row_toggle">×</div>
+					<div class="Mongol_pubsub_row_name">browsers</div>
+					Params: none 
+				</div>
+			
+				<div class="Mongol_pubsub_row">
+					<div class="Mongol_pubsub_row_toggle">×</div>
+					<div class="Mongol_pubsub_row_name">MeteorToys</div>
+					Params:  
+				</div>
+			
+		</div>
+		<!--  -->
+	</div>
+		
+
+	
+	</div>
+			
+				<div class="Mongol_row" id="Mongol_cusers">
+		
+
+		<!-- Collection Count -->
+		<div class="Mongol_counter">
+			
+			<span class="MongolHide">NaN/</span>1
+		</div>
+
+		<!-- Collection Name -->
+		<div class="Mongol_row_name"><div class="Mongol_icon Mongol_icon_collection"></div>users</div>
+    	    
+		<!-- Document Viewer -->
+		<div class="Mongol_contentView">
+			
+    
+
+		<div class="Mongol_docMenu">
+			<div class="Mongol_docBar1">
+				&nbsp;
+			</div>
+		</div>
+
+	
+    
+      <div class="Mongol_documentViewer" id="MongolDoc_users">  
+        <pre>No document found</pre>
+      </div>
+    
+  
+		</div>
+		
+	
+	</div>
+			
+				<div class="Mongol_row" id="Mongol_cbrowsers">
+		
+
+		<!-- Collection Count -->
+		<div class="Mongol_counter">
+			
+			<span class="MongolHide">NaN/</span>6
+		</div>
+
+		<!-- Collection Name -->
+		<div class="Mongol_row_name"><div class="Mongol_icon Mongol_icon_collection"></div>browsers</div>
+    	    
+		<!-- Document Viewer -->
+		<div class="Mongol_contentView">
+			
+    
+
+		<div class="Mongol_docMenu">
+			<div class="Mongol_docBar1">
+				&nbsp;
+			</div>
+		</div>
+
+	
+    
+      <div class="Mongol_documentViewer" id="MongolDoc_browsers">  
+        <pre>No document found</pre>
+      </div>
+    
+  
+		</div>
+		
+	
+	</div>
+			
+				<div class="Mongol_row Mongol_row_expand" id="Mongol_citems">
+		
+
+		<!-- Collection Count -->
+		<div class="Mongol_counter">
+			
+			<span class="MongolHide">1/</span>5
+		</div>
+
+		<!-- Collection Name -->
+		<div class="Mongol_row_name"><div class="Mongol_icon Mongol_icon_collection"></div>items</div>
+    	    
+		<!-- Document Viewer -->
+		<div class="Mongol_contentView">
+			
+    
+		
+		<div class="Mongol_docMenu">
+			
+				<div class="Mongol_docBar1">
+					
+						<div class="MeteorToys_action Mongol_m_edit">Update</div>
+						<div class="MeteorToys_action Mongol_m_new">Duplicate</div>
+						<div class="MeteorToys_action Mongol_m_delete">Remove</div>
+						<div class="MeteorToys_action Mongol_m_right">›</div>
+						<div class="MeteorToys_action Mongol_m_left">‹</div>
+					
+				</div>
+				
+		</div>
+
+	
+    
+      
+        <div class="Mongol_documentViewer" id="MongolDoc_items">  
+            <pre spellcheck="false">{
+  <span class="MeteorToys_key">"</span><span class="MeteorToys_key ">_id</span><span class="MeteorToys_key">"</span>: <span class="MeteorToys_string MeteorToys_inline" contenteditable="true">"ztHgc5Wkgn4B4Avy4"</span>,
+  <span class="MeteorToys_key">"</span><span class="MeteorToys_key MeteorToys_inline" contenteditable="true">name</span><span class="MeteorToys_key">"</span>: <span class="MeteorToys_string MeteorToys_inline" contenteditable="true">"Foove"</span>,
+  <span class="MeteorToys_key">"</span><span class="MeteorToys_key MeteorToys_inline" contenteditable="true">url</span><span class="MeteorToys_key">"</span>: <span class="MeteorToys_string MeteorToys_inline" contenteditable="true">"http://foove.nl"</span>,
+  <span class="MeteorToys_key">"</span><span class="MeteorToys_key MeteorToys_inline" contenteditable="true">wordpress</span><span class="MeteorToys_key">"</span>: <span class="MeteorToys_string MeteorToys_inline" contenteditable="true">"4.3.3"</span>,
+  <span class="MeteorToys_key">"</span><span class="MeteorToys_key MeteorToys_inline" contenteditable="true">server</span><span class="MeteorToys_key">"</span>: <span class="MeteorToys_boolean MeteorToys_inline" contenteditable="true">true</span>,
+  <span class="MeteorToys_key">"</span><span class="MeteorToys_key MeteorToys_inline" contenteditable="true">createdAt</span><span class="MeteorToys_key">"</span>: <span class="MeteorToys_string MeteorToys_inline" contenteditable="true">"2016-02-01T16:05:34.320Z"</span>,
+  <span class="MeteorToys_key">"</span><span class="MeteorToys_key MeteorToys_inline" contenteditable="true">wp_update</span><span class="MeteorToys_key">"</span>: <span class="MeteorToys_boolean MeteorToys_inline" contenteditable="true">true</span>
+}</pre>
+        </div>
+      
+    
+  
+		</div>
+		
+	
+	</div>
+			
+
+
+
+
+		
+
+	</div>
+  
+  <!-- Wrapper-->
+    <div id="wrapper">
+
+        <!-- Navigation -->
+        <nav class="purple darken-4" role="navigation">
+
+    <div class="nav-wrapper">
+
+      <ul>
+        <li>
+          <a href="http://localhost:3000/dashboard#" data-activates="slide-out" class="button-collapse show-on-large"><i class="material-icons">menu</i></a>
+        </li>
+      </ul>
+
+      
+      
+      <div id="slide-out" class="side-nav" style="left: -250px;">
+    
+    <div class="nav-head purple darken-4">
+      <a href="http://localhost:3000/dashboard"><img class="logo-image" alt="" src="./Foove Analytics Tool_files/Logo-inverted-dark@1x.svg" width="210"></a>
+    </div>
+            
+    <ul>
+      <li class="no-padding"><a href="http://localhost:3000/portfolio/add">Add new portfolio item</a></li>
+    </ul>
+  </div>
+      
+            
+      <ul class="right">
+
+        <!-- <li><a href="#"><i class="material-icons">notifications</i></a></li> -->
+
+        <li><a href="http://localhost:3000/dashboard#" data-activates="dropdown1" class="dropdown-button">
+          <i class="material-icons">account_circle</i></a><div id="dropdown1" class="dropdown-content z-depth-1"> 
+
+    
+    <button class="btn waves-effect waves-light sign-out">Sign out
+      <i class="material-icons right">send</i>
+    </button>
+    
+    <!-- <div class="account-wrapper z-depth-1"> 
+    
+    <div class="account-content row valign-wrapper">
+      <div class="col s4 ">
+        <img src="/img/defaults/avatar_circle.png" class="valign">
+      </div>
+      <div class="col s8">
+        <div>
+          <h4>Foove</h4>
+          <p class="grey-text">masi@foove.nl</p>
+        </div>
+        <div>
+          <a href="{{pathFor 'register'}}">My account</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="account-footer">
+      <a href="#!" class="btn right sign-out">Sign out</a>  
+    </div> -->
+    
+  </div>
+          
+        </li>
+        
+      </ul>
+    </div>
+  </nav>
+
+        <!-- Page wraper -->
+        <div id="page-wrapper">
+
+            <div class="row">
+        <div class="col m9 s12">
+            <!-- Main view  -->
+            <div class="card-panel">
+            <div class="card-content">
+
+            	<table class="bordered highlight">
+			        <thead>
+				        <tr>
+				              <th data-field="name">Name</th>
+				              <th data-field="server" class="center-align">Server</th>
+				              <th data-field="price" class="center-align">Wordpress</th>
+				        </tr>
+			        </thead>
+
+					<tbody>
+				        
+				        	<tr class="update">
+	    <td class="left-align">
+	    	<p>
+	    		<a href="http://localhost:3000/portfolio/item/ztHgc5Wkgn4B4Avy4" class="wp_name">Foove</a><br>
+	    		<span class="wp_url"><a href="http://foove.nl/" target="_blank" class="grey-text text-lighten-1">http://foove.nl</a></span>
+	    	</p>
+	    </td>
+	    <td class="center-align">
+	    	
+	    		<i class="small material-icons light-green-text">check_circle</i>
+	    	
+	    </td>
+	    <td class="center-align">
+	    	<p class="wp_version">4.3.3</p>
+	    </td>
+	</tr>
+				        
+				        	<tr>
+	    <td class="left-align">
+	    	<p>
+	    		<a href="http://localhost:3000/portfolio/item/vd8iF3h2DpDXCiM25" class="wp_name">Divid</a><br>
+	    		<span class="wp_url"><a href="http://dividapp.com/" target="_blank" class="grey-text text-lighten-1">http://dividapp.com</a></span>
+	    	</p>
+	    </td>
+	    <td class="center-align">
+	    	
+	    		<i class="small material-icons light-green-text">check_circle</i>
+	    	
+	    </td>
+	    <td class="center-align">
+	    	<p class="wp_version">-</p>
+	    </td>
+	</tr>
+				        
+				        	<tr>
+	    <td class="left-align">
+	    	<p>
+	    		<a href="http://localhost:3000/portfolio/item/8cTEwuwBaAkdQ9sm9" class="wp_name">Cafe De Tijdgeest</a><br>
+	    		<span class="wp_url"><a href="http://cafedetijdgeest.nl/" target="_blank" class="grey-text text-lighten-1">http://cafedetijdgeest.nl</a></span>
+	    	</p>
+	    </td>
+	    <td class="center-align">
+	    	
+	    		<i class="small material-icons light-green-text">check_circle</i>
+	    	
+	    </td>
+	    <td class="center-align">
+	    	<p class="wp_version">-</p>
+	    </td>
+	</tr>
+				        
+				        	<tr>
+	    <td class="left-align">
+	    	<p>
+	    		<a href="http://localhost:3000/portfolio/item/Fwt6CJp56kPycJaCJ" class="wp_name">Skanders Gym</a><br>
+	    		<span class="wp_url"><a href="http://skandersgym.nl/" target="_blank" class="grey-text text-lighten-1">http://skandersgym.nl</a></span>
+	    	</p>
+	    </td>
+	    <td class="center-align">
+	    	
+	    		<i class="small material-icons light-green-text">check_circle</i>
+	    	
+	    </td>
+	    <td class="center-align">
+	    	<p class="wp_version">-</p>
+	    </td>
+	</tr>
+				        
+				        	<tr>
+	    <td class="left-align">
+	    	<p>
+	    		<a href="http://localhost:3000/portfolio/item/XBt2iKGDCBNNNZ3qC" class="wp_name">Demo wordpress</a><br>
+	    		<span class="wp_url"><a href="http://demo.foove.nl/" target="_blank" class="grey-text text-lighten-1">http://demo.foove.nl</a></span>
+	    	</p>
+	    </td>
+	    <td class="center-align">
+	    	
+	    		<i class="small material-icons light-green-text">check_circle</i>
+	    	
+	    </td>
+	    <td class="center-align">
+	    	<p class="wp_version">4.4.2</p>
+	    </td>
+	</tr>
+				        
+			        </tbody>
+			    </table>
+
+
+            </div>
+          </div>
+       	</div>
+
+        <div class="col m3 s12">
+        	<div class="card medium">
+        <div class="card-image waves-effect waves-block waves-light">
+            
+                <img class="activator" src="./Foove Analytics Tool_files/smartphone.jpg">
+            
+            
+        </div>
+
+        <div class="card-content">
+            
+                <span class="card-title activator grey-text text-darken-4">YAY!</span>
+                <p>
+                    All items are checked on the latest browsers
+                </p>
+            
+        </div>
+
+        <div class="card-reveal">
+            <span class="card-title grey-text text-darken-4">Browsers<i class="material-icons right">close</i></span>
+            <table>
+                <tbody>
+                    
+                        <tr class="browser">
+                            <td><img class="browser-icon" src="./Foove Analytics Tool_files/chrome.svg"></td>
+                            <td>
+                                <p>
+                                    Chrome
+                                    
+                                    
+                                </p>
+                            </td>
+                            <td><p>48</p></td>
+                        </tr>
+                    
+                        <tr class="browser">
+                            <td><img class="browser-icon" src="./Foove Analytics Tool_files/edge.svg"></td>
+                            <td>
+                                <p>
+                                    Edge
+                                    
+                                    
+                                </p>
+                            </td>
+                            <td><p>13</p></td>
+                        </tr>
+                    
+                        <tr class="browser">
+                            <td><img class="browser-icon" src="./Foove Analytics Tool_files/firefox.svg"></td>
+                            <td>
+                                <p>
+                                    Firefox
+                                    
+                                    
+                                </p>
+                            </td>
+                            <td><p>44</p></td>
+                        </tr>
+                    
+                        <tr class="browser">
+                            <td><img class="browser-icon" src="./Foove Analytics Tool_files/ie.svg"></td>
+                            <td>
+                                <p>
+                                    Internet Explorer
+                                    
+                                    
+                                </p>
+                            </td>
+                            <td><p>11</p></td>
+                        </tr>
+                    
+                        <tr class="browser">
+                            <td><img class="browser-icon" src="./Foove Analytics Tool_files/opera.svg"></td>
+                            <td>
+                                <p>
+                                    Opera
+                                    
+                                    
+                                </p>
+                            </td>
+                            <td><p>34</p></td>
+                        </tr>
+                    
+                        <tr class="browser">
+                            <td><img class="browser-icon" src="./Foove Analytics Tool_files/safari.svg"></td>
+                            <td>
+                                <p>
+                                    Safari
+                                    
+                                    
+                                </p>
+                            </td>
+                            <td><p>9</p></td>
+                        </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+    </div>
+        </div> 
+       
+    </div>
+
+        </div>
+        <!-- End page wrapper-->
+    </div>
+    <!-- End wrapper--><div class="drag-target" style="left: 0px; touch-action: pan-y; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></div></body></html>
