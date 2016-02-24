@@ -2,11 +2,29 @@ body {
 	background-color: #F7F7F7;
 }
 
+nav {
+	height: 136px;
+}
+
+nav .nav-wrapper {
+	padding:0 0 0 16px;
+}
+
+.breadcrumbs {
+	position: absolute;
+	bottom: 0;
+}
 
 .nav-head {
 	height: 93px;
 }
 
+.underline {
+	text-decoration: underline !important;
+}
+
+
+/* Foove colors */
 .foove-purple-light {
 	background-color: #3E2256 !important;
 }
@@ -19,13 +37,23 @@ body {
 	background-color: #EE1848 !important;
 }
 
+/* Foove text colors */
+.foove-purple-light-text {
+	color: #3E2256 !important;
+}
+
+.foove-purple-dark-text {
+	color: #180D22 !important;
+}
+
+.foove-pink-text {
+	color: #EE1848 !important;
+}
+
+/* Browser icons */
 .browser-icon {
 	width: 32px;
 	height: 32px;
-}
-
-i.delete {
-	cursor: pointer;
 }
 
 /* Login template css */
@@ -88,6 +116,10 @@ i.delete {
 	z-index: 9999;
 }
 
+.account-wrapper.active {
+	display: block !important;
+}
+
 .account-content {
 	min-height: 150px;
 	padding: 28px 10px 0;
@@ -113,6 +145,16 @@ i.delete {
 
 }
 
+.user-img {
+	position: relative;
+	top: -64px;
+}
+
+.user-img img {
+	max-width: 128px;
+	margin: 0 auto;
+}
+
 /* form adjustments */
 .input-field label.active {
 	min-width: 100px;
@@ -133,23 +175,9 @@ i.delete {
    }
 
 
-/* changing button color */
-.btn {
-	background-color: #EE1848;
-}
-
-.btn:hover {
-	background-color: #EE1848;
-}
-
-.btn:focus {
-	background-color: #EE1848;
-}
-
-
 /* portfolio items template */
 th {
-	font-weight: 300;
+	font-weight: 400;
 }
 
 tr.item:hover {
@@ -162,18 +190,17 @@ td p {
 }
 
 .wp_name {
-	font-size: 24px;
-	font-weight: 200;
+	font-size: 20px;
+	font-weight: 400;
 	color: #EE1848;
 }
 
 .wp_url {
-	font-weight: 200;
+	font-weight: 400;
 }
 
 .wp_version {
-	font-size: 20px;
-	font-weight: 200;
+	font-weight: 400;
 }
 
 .need-update {
@@ -185,7 +212,6 @@ td p {
 	float: right;
 	right: -48px;
 }
-
 
 
 @media only screen and (max-width: 992px) {

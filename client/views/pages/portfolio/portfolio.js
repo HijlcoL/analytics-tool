@@ -3,9 +3,8 @@ Meteor.subscribe("items");
 Template.portfolioList.helpers({
 	items: function () {
 		return Items.find({}, {sort: [
-			["server", "asc"],
-			["wp_update", "desc"],
-			["wordpress", "asc"]
+				["server", "asc"],
+				["wp_update", "desc"]
 			]
 		});
 	}
@@ -14,6 +13,20 @@ Template.portfolioList.helpers({
 Template.portfolioItem.helpers({
 	equals: function (a, b) {
 		return a === b;
+	},
+	plugins: function() {
+		var data = this.plugins
+		var result = [];
+
+		for(var index in data){
+			if (data.hasOwnProperty(index)) {
+				result.push(data[index]);
+			}
+		}
+		return result;
+	},
+	formatDate: function(date) {
+		return moment(date).format('LL');
 	}
 });
 

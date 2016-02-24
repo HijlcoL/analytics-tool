@@ -3,31 +3,47 @@
   <nav class="foove-purple-light" role="navigation">
 
     <div class="nav-wrapper">
-
-      <ul>
-        <li>
-          <a href="#" data-activates="slide-out" class="button-collapse show-on-large"><i class="material-icons">menu</i></a>
-        </li>
-      </ul>
-
-      
-      
-      {{> slideMenu}}
-      
-            
-      <ul class="right">
-
-        <!-- <li><a href="#"><i class="material-icons">notifications</i></a></li> -->
-
-        <li><a href="#" data-activates='dropdown1' class="dropdown-button">
-          <i class="material-icons">account_circle</i></a>
-          {{> accountDropdown}}
-        </li>
+      <div class="col s12">
+        <!-- <ul>
+          <li>
+            <a href="#" data-activates="slide-out" class="button-collapse show-on-large"><i class="material-icons">menu</i></a>
+          </li>
+        </ul> -->
+         <a href="{{pathFor 'dashboard'}}" class="brand-logo"><img class="logo-image" alt="" src="/img/logos/Logo-inverted-dark@1x.svg" height="64" /></a>
         
-      </ul>
+        
+                      
+        <ul class="right">
+
+          <!-- <li><a href="#"><i class="material-icons">notifications</i></a></li> -->
+
+          <li><a href="#" data-activates='dropdown1' class="account-dropdown">
+            <i class="material-icons">account_circle</i></a>
+            {{> accountDropdown}}
+          </li>
+          
+        </ul>
+      </div>
+      <div class="col s12">
+        {{> breadcrumbs}}
+      </div>
+
+      {{> slideMenu}}
     </div>
   </nav>
 
+</template>
+
+<template name="breadcrumbs">
+    <div class="breadcrumbs">
+        {{#each Breadcrumb}}
+            {{#if showLink}}
+                <a href="{{url}}" class="breadcrumb">{{title}}</a>
+            {{else}}
+                {{title}}
+            {{/if}}
+        {{/each}}
+    </div>
 </template>
 
 <!-- slide menu template -->
@@ -48,35 +64,28 @@
 <!-- account dropdown template -->
 <template name="accountDropdown">
 
-  <div id='dropdown1' class="dropdown-content z-depth-1"> 
-
-    {{#if currentUser}}
-    <button class="btn waves-effect waves-light sign-out">Sign out
-      <i class="material-icons right">send</i>
-    </button>
-    {{/if}}
-    <!-- <div class="account-wrapper z-depth-1"> 
+    <div class="account-wrapper z-depth-1"> 
     
-    <div class="account-content row valign-wrapper">
-      <div class="col s4 ">
-        <img src="/img/defaults/avatar_circle.png" class="valign">
-      </div>
-      <div class="col s8">
-        <div>
-          <h4>Foove</h4>
-          <p class="grey-text">masi@foove.nl</p>
+      <div class="account-content row valign-wrapper">
+        <div class="col s4 ">
+          <img src="/img/defaults/avatar_circle.png" class="valign">
         </div>
-        <div>
-          <a href="{{pathFor 'register'}}">My account</a>
+        <div class="col s8">
+          <div>
+            <h4>{{currentUser.profile.name}}</h4>
+            <p class="grey-text">{{currentUser.emails.[0].address}}</p>
+          </div>
+          <div>
+            <a href="{{pathFor 'myAccount' _id=currentUser._id}}" class="waves-effect waves-light btn foove-pink">My account</a>
+          </div>
         </div>
       </div>
-    </div>
 
-    <div class="divider"></div>
+      <div class="divider"></div>
 
-    <div class="account-footer">
-      <a href="#!" class="btn right sign-out">Sign out</a>  
-    </div> -->
+      <div class="account-footer">
+        <a href="#!" class="btn-flat right foove-pink-text sign-out">Sign out</a>  
+      </div>
     
   </div>
 

@@ -27,3 +27,6 @@ gildaspk:autoform-materialize
 accounts-password
 http
 percolate:synced-cron
+msavin:jetsetter
+monbro:iron-router-breadcrumb
+momentjs:moment

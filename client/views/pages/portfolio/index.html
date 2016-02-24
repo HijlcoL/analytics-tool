@@ -1,0 +1,56 @@
+<template name="portfolioList">
+          <div class="card-panel">
+
+            <div class="card-content">
+            	<a class="btn-floating btn-large waves-effect waves-light item-create foove-pink" href="{{pathFor 'portfolioCreate'}}"><i class="material-icons">add</i></a>
+
+            	<table class="bordered highlight">
+			        <thead>
+				        <tr>
+				              <th data-field="name">Name</th>
+				              <th data-field="name">URL</th>
+				              <th data-field="server" class="center-align">Server</th>
+				              <th data-field="price" class="center-align">WordPress version</th>
+				        </tr>
+			        </thead>
+
+					<tbody>
+				        {{#each items}}
+				        	{{> item}}
+				        {{/each}}
+			        </tbody>
+			    </table>
+
+
+            </div>
+          </div>
+
+</template>
+
+
+<template name="item">
+
+	<tr class="item {{#if wp_update}}need-update{{/if}}">
+	    <td class="left-align">
+	    	<p>
+	    		<span class="wp_name">{{name}}</span>
+	    	</p>
+	    </td>
+	    <td class="left-align">
+	    	<p>
+	    		<span class="wp_url"><a href="{{url}}" target="_blank" class="grey-text">{{url}}</a></span>
+	    	</p>
+	    </td>
+	    <td class="center-align">
+	    	{{#if server}}
+	    		<i class="small material-icons light-green-text">check_circle</i>
+	    	{{else}}
+	    		<i class="small material-icons red-text">warning</i>
+	    	{{/if}}
+	    </td>
+	    <td class="center-align">
+
+	    	<p class="wp_version {{#if wp_update}}red-text{{/if}}">{{wordpress}}</p>
+	    </td>
+	</tr>
+</template>

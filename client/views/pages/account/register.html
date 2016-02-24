@@ -1,14 +1,49 @@
 <template name="register">
+
+	<div class="row">
+        <div class="col m9 s12">
     
-    <div class="row">
-		<div class="col s12">
-			<h5>Add new user</h5>
+		    <div class="row">
+				<div class="col s12">
+					<h5>Add new user</h5>
+				</div>
+			</div>
+
+			<div class="row">
+		    	<form class="card-panel col s8">
+		    	  	<div class="row">
+		    	  	  	<div class="input-field col s12">
+		    	  	  	  	<input id="Email" name="registerEmail" type="email" class="validate">
+		    	  	  	  	<label for="Email" data-error="That's no email">Email</label>
+		    	  	  	</div>
+		    	  	</div>
+		    	  	<div class="row">
+		    	  	  	<div class="input-field col s12">
+		    	  	  	  	<input id="password" name="registerPassword" type="password" class="validate">
+		    	  	  	  	<label for="password">Password</label>
+		    	  	  	</div>
+		    	  	</div>
+		    	  	<div class="row">
+		    	  	  	<div class="input-field col s12">
+		    	  	  	  	<input id="name" name="registerName" type="text" class="validate">
+		    	  	  	  	<label for="name">Name</label>
+		    	  	  	</div>
+		    	  	</div>
+		    	  	<div class="row">
+						<div class="col s12">
+					 		<p id="formMessage" class="red-text"></p>
+						</div>
+					</div>
+		    	  	<div class="row">
+		    	  		<div class="input-field col s12">
+		    	  			<button class="btn waves-effect waves-light" type="submit" name="action">Sign up
+		    					<i class="material-icons right">send</i>
+		  					</button>
+		    	  		</div>
+		    	  	</div>
+		    	</form>
+		  	</div>
+
 		</div>
-	</div>
-
-	<div class="card-panel">
-
-		{{> quickForm collection="Meteor.users" id="userCreate"}}
-		
 	</div>
 </template>

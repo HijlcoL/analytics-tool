@@ -1,31 +1,10 @@
 <template name="sidebar">
 
-	<div class="card medium">
-        <div class="card-image waves-effect waves-block waves-light">
-            {{#if update}}
-                <img class="activator" src="img/broken-medium.jpeg">
-            {{else}}
-                <img class="activator" src="img/smartphone.jpg">
-            {{/if}}
-            
-        </div>
+	<div class="card">
 
         <div class="card-content">
-            {{#if update}}
-                <span class="card-title activator grey-text text-darken-4">Whoeps!</span>
-                <p>
-                    You need to check some browsers
-                </p>
-            {{else}}
-                <span class="card-title activator grey-text text-darken-4">YAY!</span>
-                <p>
-                    All items are checked on the latest browsers
-                </p>
-            {{/if}}
-        </div>
-
-        <div class="card-reveal">
-            <span class="card-title grey-text text-darken-4">Browsers<i class="material-icons right">close</i></span>
+            <h5>Browsers</h5>
+            <div class="divider"></div>
             <table>
                 <tbody>
                     {{#each browsers}}

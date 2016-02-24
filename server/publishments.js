@@ -5,4 +5,3 @@ Meteor.publish("items", function () {
 Meteor.publish("browsers", function () {
     return Browsers.find();
   });
-
