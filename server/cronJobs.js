@@ -27,7 +27,7 @@ SyncedCron.add({
   name: 'wordpress data',
   schedule: function(parser) {
     // parser is a later.parse object
-    return parser.cron('* 6 * * *');
+    return parser.cron('0 * * * *');
   },
   job: function() {
     // get items from database
@@ -116,7 +116,7 @@ SyncedCron.add({
                     }
 
                   }
-                  Items.update({_id: item._id}, {$set: {wordpress: result.data.current_version, wp_update: isUpdate}});
+                  Items.update({_id: item._id}, {$set: {wordpress: result.data.current_version, wp_update: isUpdate, lastChecked: new Date()}});
                   // store current wordpress version and isUpdate in database
                   // Items.update({_id: item._id}, {$set: {wordpress: result.data.current_version, wp_update: isUpdate}});
                 } else {

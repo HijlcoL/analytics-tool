@@ -42,12 +42,22 @@ Template.portfolioList.events({
 
 Template.portfolioCreate.events({
 	"submit form": function (event) {
-		Router.go('dashboard');
+		if(event.target.name.value == "" || event.target.url.value == ""){
+			console.log('error');
+		} else {
+			Router.go('dashboard');
+		}
+		
 	}
 });
 
 Template.portfolioEdit.events({
 	"submit form": function (event) {
+		Router.go('dashboard');
+	},
+	"click .delete": function (event) {
+		event.preventDefault();
+		Items.remove(this._id);
 		Router.go('dashboard');
 	}
 });
