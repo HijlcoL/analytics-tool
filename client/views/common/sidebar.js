@@ -2,15 +2,11 @@ Meteor.subscribe('browsers');
 
 Template.sidebar.helpers({
 	browsers: function() {
-		return Browsers.find();
-	},
-	update: function() {
-		var updates = Browsers.findOne({checked: false});
-		if(typeof updates != "undefined"){
-			return true;
-		} else {
-			return false;
-		}
+		return Browsers.find({}, {sort: [
+				["checked", "asc"],
+				["name", "asc"]
+			]
+		});
 	}
 });
 

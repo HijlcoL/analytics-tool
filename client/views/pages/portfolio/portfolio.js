@@ -57,7 +57,12 @@ Template.portfolioEdit.events({
 	},
 	"click .delete": function (event) {
 		event.preventDefault();
-		Items.remove(this._id);
-		Router.go('dashboard');
+	    if (confirm("Are you sure?") == true) {
+	        Items.remove(this._id);
+			Router.go('dashboard');
+	    } else {
+	        console.log("You pressed Cancel!");
+	    }
+		
 	}
 });
