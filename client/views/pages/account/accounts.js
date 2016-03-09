@@ -96,15 +96,16 @@ Template.passwordRecovery.events({
         });
     },
 
-    'submit #new-password' : function(e, t) {
-        e.preventDefault();
-        var pw = t.find('#new-password-password').value;
-        Accounts.resetPassword(Session.get('resetPassword'), pw, function(err){
-            if (err)
-              console.log('Password Reset Error ' + err + ' Sorry');
-            else {
-              Session.set('resetPassword', undefined);
-              Router.go('dashboard');
+    'submit #new-password' : function(event, instance) {
+        event.preventDefault();
+        var pw = event.target.newPassword.value;
+        Accounts.resetPassword(Session.get('resetPassword'), pw, function(error){
+            if (error) {
+                var message = "There was an error changing your password: <strong>" + error.reason + "</strong>";
+                return instance.$('#formMessage').html(message);
+            } else {
+                Session.set('resetPassword', undefined);
+                Router.go('dashboard');
             }
         });
     }
