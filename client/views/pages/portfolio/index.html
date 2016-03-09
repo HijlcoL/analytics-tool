@@ -1,30 +1,39 @@
+<template name="portfolio">
+
+	<div class="row">
+        <div class="col s12">
+            <!-- Main view  -->
+            {{> portfolioList}}
+       	</div> 
+       
+    </div>
+	
+</template>
+
 <template name="portfolioList">
-          <div class="card-panel">
+  <div class="card-panel">
+    <div class="card-content">
+    	<a class="btn-floating btn-large waves-effect waves-light item-create foove-pink" href="{{pathFor 'portfolioCreate'}}">
+    		<i class="material-icons">add</i>
+    	</a>
+    	<table class="bordered highlight">
+	        <thead>
+		        <tr>
+		              <th data-field="name">Name</th>
+		              <th data-field="name" class="hide-on-small-only">URL</th>
+		              <th data-field="server" class="center-align">Server</th>
+		              <th data-field="price" class="center-align hide-on-small-only">WordPress version</th>
+		        </tr>
+	        </thead>
 
-            <div class="card-content">
-            	<a class="btn-floating btn-large waves-effect waves-light item-create foove-pink" href="{{pathFor 'portfolioCreate'}}"><i class="material-icons">add</i></a>
-
-            	<table class="bordered highlight">
-			        <thead>
-				        <tr>
-				              <th data-field="name">Name</th>
-				              <th data-field="name">URL</th>
-				              <th data-field="server" class="center-align">Server</th>
-				              <th data-field="price" class="center-align">WordPress version</th>
-				        </tr>
-			        </thead>
-
-					<tbody>
-				        {{#each items}}
-				        	{{> item}}
-				        {{/each}}
-			        </tbody>
-			    </table>
-
-
-            </div>
-          </div>
-
+			<tbody>
+		        {{#each items}}
+		        	{{> item}}
+		        {{/each}}
+	        </tbody>
+	    </table>
+    </div>
+  </div>
 </template>
 
 
@@ -36,7 +45,7 @@
 	    		<span class="wp_name">{{name}}</span>
 	    	</p>
 	    </td>
-	    <td class="left-align">
+	    <td class="left-align hide-on-small-only">
 	    	<p>
 	    		<span class="wp_url"><a href="{{url}}" target="_blank" class="grey-text">{{url}}</a></span>
 	    	</p>
@@ -48,7 +57,7 @@
 	    		<i class="small material-icons red-text">warning</i>
 	    	{{/if}}
 	    </td>
-	    <td class="center-align">
+	    <td class="center-align hide-on-small-only">
 
 	    	<p class="wp_version {{#if wp_update}}red-text{{/if}}">{{wordpress}}</p>
 	    </td>

@@ -3,7 +3,6 @@ Template.passwordRecovery.helpers({
         if (Accounts._resetPasswordToken) {
             Session.set('resetPassword', Accounts._resetPasswordToken);
         }
-        console.log(Session.get('resetPassword'));
         return Session.get('resetPassword');
     }
 });
@@ -83,16 +82,16 @@ Template.login.events({
 
 Template.passwordRecovery.events({
 
-    'submit #recovery-form' : function(e, t) {
-        e.preventDefault();
-        var email = t.find('#recovery-email').value;
+    'submit #recovery-form' : function(event, instance) {
+        event.preventDefault();
+        var email = event.target.recoveryEmail.value;
 
-        Accounts.forgotPassword({email: email}, function(err){
-            if (err)
-                console.log('Password Reset Error ' + err + ' Doh')
-            else {
-                console.log('displayMessage', 'Email Sent &amp; Please check your email.');
-                Router.go('login');
+        Accounts.forgotPassword({email: email}, function(error){
+            if (error) {
+                var message = "There was an error sending the email: <strong>" + error.reason + "</strong>";
+                return instance.$('#formMessage').html(message);
+            } else {
+                Router.go('recoverThanks');
             }
         });
     },

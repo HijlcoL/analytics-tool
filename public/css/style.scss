@@ -1,0 +1,263 @@
+body {
+	background-color: #F7F7F7;
+}
+
+nav {
+	height: 136px;
+}
+
+nav {
+	.brand-logo {
+		@media only screen and (max-width: 992px) {
+			left: 0;
+			transform:none;
+			-webkit-transform:none;
+			margin:0.25em;
+		}
+	}
+	.nav-wrapper {
+		padding:0 0 0 16px;
+	}
+}
+
+.breadcrumbs {
+	position: absolute;
+	bottom: 0;
+	@media only screen and (max-width: 601px) {
+		.breadcrumb{
+			font-size: 12px;
+		}
+	}
+}
+
+.nav-head {
+	height: 93px;
+}
+
+.underline {
+	text-decoration: underline !important;
+}
+
+/* Card */
+.card-panel {
+	position: relative;
+}
+.card-panel {
+
+	.btn-floating {
+		@media only screen and (min-width: 700px) {
+			position: absolute;
+		    right: 0;
+		    margin-right: -27.75px;
+		}
+	}
+}
+.dashboard .col.m9 {
+	@media only screen and (min-width: 700px) {
+		padding-right: 4em;
+	}
+}
+
+/* Foove colors */
+.foove-purple-light {
+	background-color: #3E2256 !important;
+}
+
+.foove-purple-dark {
+	background-color: #180D22 !important;
+}
+
+.foove-pink {
+	background-color: #EE1848 !important;
+}
+
+/* Foove text colors */
+.foove-purple-light-text {
+	color: #3E2256 !important;
+}
+
+.foove-purple-dark-text {
+	color: #180D22 !important;
+}
+
+.foove-pink-text {
+	color: #EE1848 !important;
+}
+
+/* Browser icons */
+.browser-icon {
+	width: 32px;
+	height: 32px;
+}
+
+/* Login template css */
+.login-background {
+	height: 100vh;
+	background-color: #180D22;
+}
+
+.login-logo {
+	position: absolute;
+	width: 100%;
+}
+.login-logo img{
+	max-height: 200px;
+	max-width: 70%;
+	display: inline-block;
+}
+
+.login-slope-cover {
+	position: absolute;
+	bottom: 0;
+	height: 40%;
+	width: 100%;
+	overflow: hidden;
+}
+.login-slope {
+	width: 120%;
+	height: 100%;
+	left: -10%;
+	bottom: -20%;
+
+	-webkit-transform: rotate(5deg);
+    -moz-transform: rotate(5deg);
+    -o-transform: rotate(5deg);
+    -ms-transform: rotate(5deg);
+    transform: rotate(5deg);
+
+    position: relative;
+	background-color: #EE1848; 
+}
+
+.login-card {
+	padding: 20px;
+}
+
+.login-avatar {
+	width: 100%;
+}
+
+/* account dropdown field */
+.account-wrapper {
+	display: none;
+	background-color: #FFF;
+	color: rgba(0, 0, 0, 0.87);
+	
+	min-width: 350px;
+	position: absolute;
+	right: 0;
+
+	z-index: 9999;
+}
+
+
+.account-content {
+	min-height: 150px;
+	padding: 28px 10px 0;
+}
+
+.account-content img {
+	max-width: 77px;
+}
+
+.account-content h4 {
+	margin-bottom: 0;
+}
+
+.account-content p {
+	margin-top: 0;
+}
+
+.account-footer {
+	min-height: 50px;
+	padding: 8px;
+
+	background-color: #F7F7F7;
+
+}
+.account-wrapper {
+	@media only screen and (max-width: 601px) {
+		min-width: auto;
+		width: 100%;
+	}
+	&.active {
+		display: block;
+	}
+}
+
+.user-img {
+	position: relative;
+	top: -64px;
+}
+
+.user-img img {
+	max-width: 128px;
+	margin: 0 auto;
+}
+
+/* form adjustments */
+.input-field label.active {
+	min-width: 100px;
+}
+
+	/* label focus color */
+   .input-field input[type]:focus + label {
+     color: #EE1848;
+   }
+   /* label underline focus color */
+   .input-field input[type]:focus {
+     border-bottom: 1px solid #EE1848;
+     box-shadow: 0 1px 0 0 #EE1848;
+   }
+   /* icon prefix focus color */
+   .input-field .prefix.active {
+     color: #EE1848;
+   }
+
+
+/* portfolio items template */
+th {
+	font-weight: 400;
+	padding:20px 5px;
+}
+
+tr.item:hover {
+	cursor: pointer;
+}
+
+td p {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+.wp_name {
+	font-weight: 400;
+	color: #EE1848;
+	@media only screen and (min-width: 993px) {
+		font-size:20px;
+	}
+}
+
+.wp_url {
+	font-weight: 400;
+}
+
+.wp_version {
+	font-weight: 400;
+}
+
+.need-update {
+	border-bottom: 1px solid #F44336 !important;
+}
+
+.item-update {
+	position: relative;
+	float: right;
+	right: -48px;
+}
+
+@media only screen and (max-width: 992px) {
+	.item-update {
+		right: 0;
+	}
+}

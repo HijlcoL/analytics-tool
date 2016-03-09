@@ -1,14 +1,8 @@
-// Template.mainLayout.events({
-// 	'click': function(event) {
-// 		var container = $(".account-wrapper");
-// 		var activator = $(".account-dorpdown");
-// 		console.log(container.hasClass('active'));
-// 		console.log(activator);
-// // console.log(event);
-// 		if(container.hasClass('active')){
-// 			if(!activator.is(event.target) && activator.has(event.target).length === 0){
-// 				container.removeClass('active');
-// 			}
-// 		}
-// 	}
-// });
+Template.mainLayout.events({
+	'click': function(event) {
+		var target = event.target;
+		if($(target).parents(".account-dropdown").length === 0 && target != $(".account-wrapper").eq(0) && $(target).parents(".account-wrapper").length === 0){
+			$(".account-wrapper").removeClass("active");
+		}
+	}
+});
