@@ -1,0 +1,56 @@
+<template name="notifications">
+	
+	<div class="row">
+		<div class="input-field col s12">
+		  	<div class="switch">
+			    <label>
+			      	<span class="switch-label">Server Status</span>
+			      	<input type="checkbox" name="server" checked="{{#if profile.notify.server}}checked{{/if}}">
+			      	<span class="lever"></span>
+			    </label>
+			</div>
+	  	</div>
+	</div>
+
+	<div class="row">
+	  	<div class="input-field col s12">
+	  	  	<div class="switch">
+			    <label>
+			      	<span class="switch-label">WordPress Version Updates</span>
+			      	<input type="checkbox" name="wpCore" checked="{{#if profile.notify.wpCore}}checked{{/if}}">
+			      	<span class="lever"></span>
+			    </label>
+			</div>
+	  	</div>
+	</div>
+
+	<div class="row">
+	  	<div class="input-field col s12">
+	  	  	<div class="switch">
+			    <label>
+			      	<span class="switch-label">WordPress Plugin Updates</span>
+			      	<input type="checkbox" name="wpPlugins" checked="{{#if profile.notify.wpPlugins}}checked{{/if}}">
+			      	<span class="lever"></span>
+			    </label>
+			</div>
+	  	</div>
+	</div>
+
+	<div class="row">
+	  	<div class="input-field col s12">
+	  	  	<div class="switch">
+			    <label>
+			      	<span class="switch-label">Browser Updates</span>
+			      	<input type="checkbox" name="browsers" checked="{{#if profile.notify.browsers}}checked{{/if}}">
+			      	<span class="lever"></span>
+			    </label>
+			</div>
+	  	</div>
+	</div>
+	   	  	
+	<!-- <div class="row">
+	  	<div class="input-field col s12">
+	  	  	<div class="divider"></div>
+	  	</div>
+	</div> -->
+</template>

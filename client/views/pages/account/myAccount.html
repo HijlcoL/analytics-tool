@@ -2,69 +2,45 @@
 
 	<div class="row">
 		<div class="col s12 m5">
-			<div class="container">
-				{{> accountCard}}
-			</div>
+			{{> accountCard}}
 		</div>
 		<div class="col s12 m7">
 			<div class="card-panel">
-				{{> updateForm}}
+				<div class="row">
+	   				<form class="col s12">
+
+	   					<div class="row">
+				   	  	  	<div class="input-field col s12">
+				   	  	  	  	<h4>Personal</h4>
+				   	  	  	</div>
+				   	  	</div>
+
+						{{> personal}}
+
+						<div class="row">
+				   	  	  	<div class="input-field col s12">
+				   	  	  	  	<h4>Notifications</h4>
+				   	  	  	</div>
+				   	  	</div>
+						{{> notifications}}
+
+						<div class="row">
+							<div class="col s12">
+								<p id="formMessage" class="red-text"></p>
+							</div>
+						</div>
+
+				   	  	<div class="row">
+				   	  		<div class="input-field col s12">
+				   	  			<button class="btn waves-effect waves-light foove-pink" type="submit" name="action">Update
+				   					<i class="material-icons right">send</i>
+								</button>
+				   	  		</div>
+				   	  	</div>
+					</form>
+				</div>
 			</div>
 		</div>
 	</div>
 
-</template>
-
-<template name="updateForm">
-	<div class="row">
-		    	<form class="col s12">
-		    		<div class="row">
-		    	  	  	<div class="input-field col s12">
-		    	  	  	  	<input value="{{emails.[0].address}}" id="Email" name="updateEmail" type="email" class="validate">
-		    	  	  	  	<label class="active" for="Email" data-error="That's no email">Email</label>
-		    	  	  	</div>
-		    	  	</div>
-		    	  	<div class="row">
-		    	  	  	<div class="input-field col s6">
-		    	  	  	  	<input id="oldPassword" name="oldPassword" type="password" class="validate" required>
-		    	  	  	  	<label for="oldPassword">Old Password</label>
-		    	  	  	</div>
-		    	  	  	<div class="input-field col s6">
-		    	  	  	  	<input id="newPassword" name="newPassword" type="password" class="validate">
-		    	  	  	  	<label for="newPassword">New Password</label>
-		    	  	  	</div>
-		    	  	</div>
-		    	  	<div class="row">
-		    	  	  	<div class="input-field col s12">
-		    	  	  	  	<input value="{{profile.name}}" id="name" name="updateName" type="text" class="validate">
-		    	  	  	  	<label class="active" for="name">Name</label>
-		    	  	  	</div>
-		    	  	</div>
-		    	  	<div class="row">
-						<div class="col s12">
-					 		<p id="formMessage" class="red-text"></p>
-						</div>
-					</div>
-		    	  	<div class="row">
-		    	  		<div class="input-field col s12">
-		    	  			<button class="btn waves-effect waves-light foove-pink" type="submit" name="action">Update
-		    					<i class="material-icons right">send</i>
-		  					</button>
-		    	  		</div>
-		    	  	</div>
-		    	</form>
-		  	</div>
-</template>
-
-<template name="accountCard">
-	<div class="card">
-		<div class="card-image">
-			<img src="/img/smartphone.jpg">
-			<span class="user-img"><img src="/img/defaults/avatar_circle.png"></span>
-		</div>
-		<div class="card-content user-info">
-					<h4>{{profile.name}}</h4>
-					<p>{{emails.[0].address}}</p>
-		</div>
-	</div>
 </template>

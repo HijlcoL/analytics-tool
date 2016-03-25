@@ -141,12 +141,19 @@ nav .nav-wrapper {
   display: block; }
 
 .user-img {
-  position: relative;
-  top: -64px; }
+  position: absolute;
+  bottom: -64px;
+  left: 0;
+  right: 0; }
 
 .user-img img {
   max-width: 128px;
   margin: 0 auto; }
+
+.switch-label {
+  min-width: 200px;
+  margin-right: 24px;
+  display: inline-block; }
 
 /* form adjustments */
 .input-field label.active {

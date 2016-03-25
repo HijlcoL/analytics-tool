@@ -11,14 +11,25 @@ Template.passwordRecovery.helpers({
 Template.register.events({
     'submit form': function(event){
         event.preventDefault();
-        var emailVar = event.target.registerEmail.value;
+        var emailVar    = event.target.registerEmail.value;
         var passwordVar = event.target.registerPassword.value;
-        var nameVar = event.target.registerName.value;
+        var nameVar     = event.target.registerName.value;
+
+        var serverVar   = event.target.server.checked;
+        var wpCoreVar   = event.target.wpCore.checked;
+        var wpPluginsVar = event.target.wpPlugins.checked;
+        var browsersVar  = event.target.browsers.checked;
         Accounts.createUser({
             email: emailVar,
             password: passwordVar,
             profile: {
-                name: nameVar
+                name: nameVar,
+                notify: {
+                    server:     serverVar,
+                    wpCore:     wpCoreVar,
+                    wpPlugins:  wpPluginsVar,
+                    browsers:   browsersVar
+                }
             }
         }, function(error) {
             if (error) {
@@ -31,34 +42,50 @@ Template.register.events({
 });
 
 Template.myAccount.events({
-    'submit form': function(event){
+    'submit form': function(event, instance){
         event.preventDefault();
         var currentId = Session.get('current');
         var currentUser = Meteor.users.findOne(currentId);
-
-        console.log(currentUser);
 
         var emailVar = event.target.updateEmail.value;
         var oldPasswordVar = event.target.oldPassword.value;
         var newPasswordVar = event.target.newPassword.value;
         var nameVar = event.target.updateName.value;
 
-        if(emailVar != currentUser.emails[0].address && emailVar != ''){
-            Meteor.call('updateUserEmail', currentId, emailVar, currentUser);
-        }
-        if(newPasswordVar != ''){
-            Accounts.changePassword(oldPasswordVar, newPasswordVar, function(error) {
-                if (error) {
-                    var message = "There was an error changing your password in: <strong>" + error.reason + "</strong>";
-                    return instance.$('.formMessage').html(message);
+        var serverVar   = event.target.server.checked;
+        var wpCoreVar   = event.target.wpCore.checked;
+        var wpPluginsVar = event.target.wpPlugins.checked;
+        var browsersVar  = event.target.browsers.checked;
+
+        if(oldPasswordVar != ''){
+            var digest = Package.sha.SHA256(oldPasswordVar);
+            Meteor.call('checkPassword', digest, function(err, result) {
+                if (result) {
+                    if(emailVar != currentUser.emails[0].address && emailVar != ''){
+                        Meteor.call('updateUserEmail', currentId, emailVar, currentUser);
+                    }
+                    if(newPasswordVar != ''){
+                        Accounts.changePassword(oldPasswordVar, newPasswordVar, function(error) {
+                            if (error) {
+                                var message = "There was an error changing your password in: <strong>" + error.reason + "</strong>";
+                                return instance.$('.formMessage').html(message);
+                            }
+                        });
+                    }
+                    if(nameVar != currentUser.profile.name && nameVar != ''){
+                        Meteor.call('updateProfile', currentId, nameVar);
+                    }
+
+                    Meteor.call('updateNotifications', currentId, serverVar, wpCoreVar, wpPluginsVar, browsersVar);
+
+                    Session.set('current', null);
+                    Router.go('dashboard');
+                } else {
+                    $(event.target.oldPassword).addClass('invalid');
+                    return instance.$('#formMessage').html("Wrong password");
                 }
             });
         }
-        if(nameVar != currentUser.profile.name && nameVar != ''){
-            Meteor.call('updateProfile', currentId, nameVar);
-        }
-        Session.set('current', null);
-        Router.go('dashboard');
     }
 });
 

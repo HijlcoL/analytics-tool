@@ -27,7 +27,8 @@ SyncedCron.add({
   name: 'wordpress data',
   schedule: function(parser) {
     // parser is a later.parse object
-    return parser.cron('0,15,30,45 * * * *');
+    return parser.cron('* * * * *');
+    // return parser.cron('0,15,30,45 * * * *');
   },
   job: function() {
     // get items from database
@@ -59,6 +60,7 @@ SyncedCron.add({
 
                       var objKey = obj.Name;
 
+                      // if object is not set in the database create a new entry
                       if(Object.keys(item.plugins).length === 0 || !item.plugins[objKey]){
                         dbPush[objKey] = {
                           'pluginName': objKey,
@@ -68,7 +70,9 @@ SyncedCron.add({
                         };
 
                         Items.update({_id: item._id}, {$set: {plugins: dbPush}});
-                      } else if (obj.Version != item.plugins[objKey].currentPluginVersion){
+                      }
+                      // if object is updated in WordPress update the entry 
+                      else if (obj.Version != item.plugins[objKey].currentPluginVersion){
                         dbPush[objKey] = {
                           'pluginName': objKey,
                           'currentPluginVersion': obj.Version,
@@ -78,6 +82,7 @@ SyncedCron.add({
 
                         Items.update({_id: item._id}, {$set: {plugins: dbPush}});
                       }
+                      // if nothing changed reset the entry to prefent the loss
                       else {
                         dbPush[objKey] = {
                           'pluginName': objKey,
@@ -100,6 +105,7 @@ SyncedCron.add({
                       var obj = pluginUpdates[key];
                       var objKey = obj.Name;
 
+                      // if there is an update available update the entry to set it.
                       if(objKey in dbPush || item.plugins[objKey]){
                         dbPush[objKey] = {
                           'pluginName': objKey,

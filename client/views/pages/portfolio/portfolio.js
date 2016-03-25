@@ -14,6 +14,9 @@ Template.portfolioItem.helpers({
 	equals: function (a, b) {
 		return a === b;
 	},
+	unequals: function(a, b) {
+		return a != b;
+	},
 	plugins: function() {
 		var data = this.plugins
 		var result = [];

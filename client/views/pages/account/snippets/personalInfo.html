@@ -1,0 +1,33 @@
+<template name="personal">
+	<div class="row">
+	  	<div class="input-field col s12">
+	  	  	<input value="{{emails.[0].address}}" id="Email" name="updateEmail" type="email" class="validate">
+	  	  	<label class="active" for="Email" data-error="That's no email">Email</label>
+	  	</div>
+	</div>
+	<div class="row">
+		<div class="input-field col s6">
+	  	  	<input id="oldPassword" name="oldPassword" type="password" class="validate" required>
+	  	  	<label for="oldPassword">Old Password</label>
+	  	</div>
+	  	<div class="input-field col s6">
+	  	  	<input id="newPassword" name="newPassword" type="password" class="validate">
+	  	  	<label for="newPassword">New Password</label>
+	  	</div>
+	  	<div class="col s12">
+		 	<p id="formMessage" class="red-text"></p>
+		</div>
+	</div>
+	<div class="row">
+	  	<div class="input-field col s12">
+	  	  	<input value="{{profile.name}}" id="name" name="updateName" type="text" class="validate">
+	  	  	<label class="active" for="name">Name</label>
+	  	</div>
+	</div>
+	   	  	
+	<div class="row">
+	  	<div class="input-field col s12">
+	  	  	<div class="divider"></div>
+	  	</div>
+	</div>
+</template>
