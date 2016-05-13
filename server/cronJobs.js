@@ -15,6 +15,13 @@ SyncedCron.add({
             	Items.update({_id: item._id}, {$set: {server: true}});
             } else {
             	Items.update({_id: item._id}, {$set: {server: false}});
+              Meteor.call('sendEmail',{
+                to: 'hijlco@foove.nl',
+                from: 'no-reply@foove.nl',
+                subject: item.name +' is offline!',
+                text: '  ',
+                html: 'This Server is <span style="color:red">offline</span>'
+              });
             }
 	    });
 
